@@ -1,0 +1,36 @@
+event:
+  block-break:
+    cell: "&cNice try, your cell is unbreakable!"
+
+command:
+  error:
+    player-only: "&cOnly players can execute this command!"
+    prisoner-not-found: "&cPrisoner cannot be found."
+    invalid-subcommand: "&cInvalid subcommand!"
+    no-subcommand: "&cCommand requires subcommands!"
+    no-permission: "&cYou don't have permission to issue this command!"
+    number-required: "&cNumber required, %s isn't a number!"
+    player-not-found: "&cPlayer %s cannot be found, are they online?"
+
+  cell:
+    teleported: "&aTeleported to your cell"
+
+  contraband:
+    get: "&a&l%s&r has &6&l%d&r contraband!"
+    send:
+      not-enough: "You don't have enough contraband to send &6&l%d&r!"
+      success-sender: "You sent &6&l%d&r contraband to &a&l%s&r!"
+      success-target: "&a&l%s&r sent you &6&l%d&r contraband!"
+      same-target: "You can't send contraband to yourself!"
+    add:
+      success-sender: "Added &6&l%d&r to &a&l%s&r's contraband!"
+      success-target: "Admin added &6&l%d&r to your contraband!"
+    set:
+      success-sender: "Set &a&l%s&r contraband to &6&l%d&r!"
+      success-target: "Admin set your contraband to &6&l%d&r!"
+    remove:
+      success-sender: "Removed &6&l%d&r contraband from &a&l%s&r!"
+      success-target: "Admin removed &6&l%d&r from your contraband!"
+    reset:
+      success-sender: "Reset &a&l%s&r contraband to &6&l%d&r!"
+      success-target: "Admin has reset your contraband to &6&l%d&r"

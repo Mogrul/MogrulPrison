@@ -1,0 +1,85 @@
+name: MogrulPrison
+version: '1.0-SNAPSHOT'
+main: com.mogrul.prison.MogrulPrison
+api-version: '1.21.11'
+author: Mogrul
+description: A prison server management system.
+website: https://www.mogrul.com
+
+libraries:
+  - "com.flowpowered:flow-nbt:1.0.0"
+
+commands:
+  cell:
+    description: Teleport to your cell.
+    usage: /<command>
+    permission: mogrulprison.cell.teleport
+
+  contraband:
+    description: Contraband management.
+    usage: /<command> [get|add|set|remove|reset|send] [player] [amount]
+    permission: mogrulprison.contraband
+
+permissions:
+  # ROOT PERMISSION
+  mogrulprison.*:
+    description: Access to all mogrulprison commands.
+    default: op
+    children:
+      mogrulprison.cell.*: true
+
+  # CELL PERMISSIONS
+  mogrulprison.cell.*:
+    description: Access to all cell commands.
+    default: op
+    children:
+      mogrulprison.cell.teleport: true
+      mogrulprison.cell.break: true
+
+  mogrulprison.cell.teleport:
+    description: Access to the cell teleporting command.
+    default: true
+
+  mogrulprison.cell.break:
+    description: Access to breaking their cell.
+    default: op
+
+  # CONTRABAND PERMISSIONS
+  mogrulprison.contraband.*:
+    description: Access to all contraband commands.
+    default: op
+    children:
+      mogrulprison.contraband.get: true
+      mogrulprison.contraband.send: true
+      mogrulprison.contraband.add: true
+      mogrulprison.contraband.remove: true
+      mogrulprison.contraband.set: true
+      mogrulprison.contraband.reset: true
+
+  mogrulprison.contraband:
+    description: Base contraband permission.
+    default: true
+
+  mogrulprison.contraband.get:
+    description: Access to getting a prisoners contraband value.
+    default: true
+
+  mogrulprison.contraband.send:
+    description: Access to sending contraband to a prisoner.
+    default: true
+
+  mogrulprison.contraband.add:
+    description: Access to add onto a prisoner's contraband value.
+    default: op
+
+  mogrulprison.contraband.remove:
+    description: Access to removing from a prisoner's contraband value.
+    default: op
+
+  mogrulprison.contraband.set:
+    description: Access to setting a prisoner's contraband value.
+    default: op
+
+  mogrulprison.contraband.reset:
+    description: Access to resetting a prisoner's contraband value to the default value.
+    default: op

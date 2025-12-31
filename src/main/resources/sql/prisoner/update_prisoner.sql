@@ -1,0 +1,1 @@
+UPDATE `prisoner` SET username = ?, last_join = ?, contraband = ? WHERE uuid = ?

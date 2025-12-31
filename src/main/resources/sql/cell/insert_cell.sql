@@ -1,0 +1,1 @@
+INSERT INTO `cell` (uuid, chunk_x, chunk_z) VALUES (?, ?, ?)

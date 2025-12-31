@@ -1,0 +1,43 @@
+# Locale used for in-game messages
+locale: en_GB
+
+# World view distances
+world_cells-view-distance: 2
+world_prison-view-distance: 10
+world_mines-view-distance: 3
+
+# Starting contraband when a new player joins
+starting-contraband: 100
+
+# A list of sentences given to a user when they join, randomly selected from the list.
+prison-sentences:
+  - "Illegal tree punching"
+  - "Stealing a crafting table"
+  - "Excessive villager haggling"
+  - "Crafting a hoe and never farming"
+  - "Failure to return borrowed pickaxes"
+  - "Mining straight down"
+  - "Improper torch placement"
+  - "Excessive jumping in low-ceiling tunnels"
+  - "Unlicensed diamond excavation"
+  - "Gravel negligence resulting in cave-ins"
+  - "Overusing fortune I"
+  - "Using iron pickaxe on dirt"
+  - "Improper comparator usage"
+  - "Overclocking hoppers"
+  - "Villager kidnapping"
+  - "Trading without a bell"
+  - "Unregistered mob grinder operation"
+  - "Unauthorised portal creation"
+  - "Piglin provocation"
+  - "Ghast aggro negligence"
+  - "Smuggling blaze rods"
+  - "Wither construction without supervision"
+  - "Improper enderman relocation"
+  - "Illegal elytra possession"
+  - "Bridge building without guard rails"
+  - "Spawn camping"
+  - "Theft of dropped items"
+  - "Griefing via sand"
+  - "Lava bucket intimidation"
+  - "Door spam harassment"

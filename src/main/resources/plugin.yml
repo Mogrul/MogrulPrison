@@ -20,6 +20,16 @@ commands:
     usage: /<command> [get|add|set|remove|reset|send] [player] [amount]
     permission: mogrulprison.contraband
 
+  prison:
+    description: Teleport to the prison.
+    Usage: /<command>
+    permission: mogrulprison.prison.teleport
+
+  sentence:
+    description: Get you or another prisoner's sentence.
+    Usage: /<command>
+    permission: mogrulprison.sentence
+
 permissions:
   # ROOT PERMISSION
   mogrulprison.*:
@@ -43,6 +53,17 @@ permissions:
   mogrulprison.cell.break:
     description: Access to breaking their cell.
     default: op
+
+  # PRISON PERMISSIONS
+  mogrulprison.prison.*:
+    description: Access to all prison commands.
+    default: op
+    children:
+      mogrulprison.prison.teleport: true
+
+  mogrulprison.prison.teleport:
+    description: Access to prison teleporting command.
+    default: true
 
   # CONTRABAND PERMISSIONS
   mogrulprison.contraband.*:
@@ -83,3 +104,24 @@ permissions:
   mogrulprison.contraband.reset:
     description: Access to resetting a prisoner's contraband value to the default value.
     default: op
+
+  # SENTENCE PERMISSIONS
+  mogrulprison.sentence.*:
+    description: Access to all sentence commands.
+    default: op
+    children:
+      mogrulprison.sentence: true
+      mogrulprison.sentence.getPrisoner: true
+      mogrulprison.sentence.getOwn: true
+
+  mogrulprison.sentence:
+    description: Base sentence command.
+    default: true
+
+  mogrulprison.sentence.getPrisoner:
+    description: Access to getting other prisoner's sentence.
+    default: true
+
+  mogrulprison.sentence.getOwn:
+    description: Access to getting prisoner's own sentence.
+    default: true

@@ -2,6 +2,10 @@ event:
   block-break:
     cell: "&cNice try, your cell is unbreakable!"
 
+  first-join:
+    title: "YOU'VE BEEN SENTENCED FOR LIFE"
+    charge: "Your charge: %s"
+
 command:
   error:
     player-only: "&cOnly players can execute this command!"
@@ -13,7 +17,10 @@ command:
     player-not-found: "&cPlayer %s cannot be found, are they online?"
 
   cell:
-    teleported: "&aTeleported to your cell"
+    teleported: "&aTeleported to your cell."
+
+  prison:
+    teleported: "&aTeleported to the prison."
 
   contraband:
     get: "&a&l%s&r has &6&l%d&r contraband!"
@@ -34,3 +41,8 @@ command:
     reset:
       success-sender: "Reset &a&l%s&r contraband to &6&l%d&r!"
       success-target: "Admin has reset your contraband to &6&l%d&r"
+
+  sentence:
+    get:
+      own: "Your sentence: '&a%s&r'"
+      prisoner: "%s was sentenced for: '&a%s&r'"

@@ -5,6 +5,7 @@ import com.mogrul.prison.manager.PrisonerManager;
 import com.mogrul.prison.manager.WorldManager;
 import com.mogrul.prison.model.Cell;
 import com.mogrul.prison.model.Prisoner;
+import com.mogrul.prison.util.SentenceUtil;
 import com.mogrul.prison.util.TimeUtil;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -23,6 +24,7 @@ public class PlayerEvent implements Listener {
 
         if (prisoner == null) {
             prisoner = PrisonerManager.createPrisoner(player);
+            SentenceUtil.sendFirstJoinMessage(player, prisoner);
         } else {
             prisoner.setLastJoin(TimeUtil.getTimeFromString(System.currentTimeMillis()));
             prisoner.setUsername(player.getName());

@@ -18,11 +18,11 @@ public class ContrabandCommand implements CommandExecutor, TabCompleter {
     );
 
     public ContrabandCommand(MogrulPrison plugin) {
-        PluginCommand command = plugin.getCommand("contraband");
+        PluginCommand cmd = plugin.getCommand("contraband");
 
-        if (command != null) {
-            command.setExecutor(this);
-            command.setTabCompleter(this);
+        if (cmd != null) {
+            cmd.setExecutor(this);
+            cmd.setTabCompleter(this);
         } else {
             throw new RuntimeException("No contraband command found!");
         }

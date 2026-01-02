@@ -6,6 +6,9 @@ world_cells-view-distance: 2
 world_prison-view-distance: 10
 world_mines-view-distance: 3
 
+# World spawn locations
+world_prison-spawn-location: [0, 64, 0]
+
 # Starting contraband when a new player joins
 starting-contraband: 100
 

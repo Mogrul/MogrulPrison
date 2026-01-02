@@ -5,7 +5,6 @@ import com.mogrul.prison.manager.LocaleManager;
 import com.mogrul.prison.manager.PrisonerManager;
 import com.mogrul.prison.manager.WorldManager;
 import com.mogrul.prison.model.Prisoner;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,11 +14,11 @@ import org.bukkit.entity.Player;
 
 import java.util.logging.Logger;
 
-public class CellCommand implements CommandExecutor {
-    private final String commandName = "cell";
+public class PrisonCommand implements CommandExecutor {
+    private final String commandName = "prison";
     private final Logger logger;
 
-    public CellCommand(MogrulPrison plugin) {
+    public PrisonCommand(MogrulPrison plugin) {
         logger = plugin.getLogger();
         PluginCommand cmd = plugin.getCommand(commandName);
 
@@ -48,8 +47,16 @@ public class CellCommand implements CommandExecutor {
             return true;
         }
 
-        player.teleport(prisoner.getCell().getSpawnLocation());
-        player.sendMessage(LocaleManager.get("command.cell.teleported"));
+        Location prisonLocation = WorldManager.prisonWorld.getSpawnLocation();
+
+        player.teleport(new Location(
+                prisonLocation.getWorld(),
+                prisonLocation.x() + 0.5,
+                prisonLocation.y(),
+                prisonLocation.z() + 0.5
+        ));
+        player.sendMessage(LocaleManager.get("command.prison.teleported"));
+
         return true;
     }
 }

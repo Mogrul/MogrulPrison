@@ -51,9 +51,18 @@ public class WorldManager {
             world.setGameRule(GameRules.MOB_GRIEFING, false);
             world.setGameRule(GameRules.FIRE_DAMAGE, false);
 
+            List<Integer> spawnLocationIntList = ConfigManager.getIntList(worldName + "-spawn-location");
+            if (!spawnLocationIntList.isEmpty()) {
+                world.setSpawnLocation(new Location(
+                        world,
+                        spawnLocationIntList.get(0),
+                        spawnLocationIntList.get(1),
+                        spawnLocationIntList.get(2)
+                ));
+            }
 
             if (Objects.equals(worldName, "world_prison") &&
-                !CURRENT_WORLDS.containsKey(worldName)
+                    !CURRENT_WORLDS.containsKey(worldName)
             ) {
                 generateWorldPlatform(world, 5, 5);
             }

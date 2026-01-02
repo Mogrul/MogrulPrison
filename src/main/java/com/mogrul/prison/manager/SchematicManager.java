@@ -262,8 +262,6 @@ public class SchematicManager {
                     int bz = startZ + zz;
 
                     Block block = world.getBlockAt(bx, by, bz);
-                    logger.info("Placed block at (" + bx + ", " + by + ", " + bz + ")");
-
                     // Paste using block data
                     BlockData bd = toBlockData(state);
                     if (bd != null) {

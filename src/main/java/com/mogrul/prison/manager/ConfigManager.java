@@ -16,6 +16,10 @@ public class ConfigManager {
         return config.getStringList(key);
     }
 
+    public static List<Integer> getIntList(String key) {
+        return config.getIntegerList(key);
+    }
+
     public static int getInt(String key) {
         return config.getInt(key);
     }

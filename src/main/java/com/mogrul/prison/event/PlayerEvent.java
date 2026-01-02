@@ -4,6 +4,7 @@ import com.mogrul.prison.manager.LocaleManager;
 import com.mogrul.prison.manager.PrisonerManager;
 import com.mogrul.prison.manager.WorldManager;
 import com.mogrul.prison.model.Cell;
+import com.mogrul.prison.model.PlacedSchematic;
 import com.mogrul.prison.model.Prisoner;
 import com.mogrul.prison.util.SentenceUtil;
 import com.mogrul.prison.util.TimeUtil;
@@ -55,7 +56,7 @@ public class PlayerEvent implements Listener {
         }
         Cell cell = prisoner.getCell();
 
-        if (cell.blockInCell(block)) {
+        if (cell.blockInSchematic(block)) {
             event.setCancelled(true);
             player.sendMessage(LocaleManager.get("event.block-break.cell"));
         }

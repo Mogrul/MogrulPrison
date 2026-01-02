@@ -1,11 +1,13 @@
 package com.mogrul.prison.manager;
 
-import com.mogrul.prison.MogrulPrison;
 import com.mogrul.prison.model.Cell;
+import com.mogrul.prison.model.PlacedSchematic;
 import com.mogrul.prison.model.Prisoner;
 import com.mogrul.prison.util.SqlUtil;
 import com.mogrul.prison.util.TimeUtil;
 import org.bukkit.entity.Player;
+import org.joml.Vector2d;
+import org.joml.Vector3d;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -76,7 +78,12 @@ public class PrisonerManager {
                 LocalDateTime firstJoin = TimeUtil.getTimeFromString(rs.getLong("first_join"));
                 LocalDateTime lastJoin = TimeUtil.getTimeFromString(rs.getLong("last_join"));
 
-                Cell cell = new Cell(cellUUID, chunkX, chunkZ);
+                Cell cell = new Cell(
+                        cellUUID,
+                        new Vector2d(chunkX, chunkZ),
+                        new Vector3d(chunkX + 8.5, CellManager.cellSpawnY, chunkZ + 8.5),
+                        WorldManager.cellsWorld, CellManager.schematicBlocksSet
+                );
 
                 return new Prisoner(
                         prisonerUUID, username, sentence,

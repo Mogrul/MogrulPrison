@@ -14,7 +14,9 @@ public final class MogrulPrison extends JavaPlugin {
         DatabaseManager.init(this);
         SchematicManager.init(this, DatabaseManager.connection);
         PrisonerManager.init(getLogger(), DatabaseManager.connection);
+
         CellManager.init(getLogger(), DatabaseManager.connection);
+        MineMangager.init(getLogger(), DatabaseManager.connection);
     }
 
     @Override

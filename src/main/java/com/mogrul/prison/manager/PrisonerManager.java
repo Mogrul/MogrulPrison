@@ -114,10 +114,10 @@ public class PrisonerManager {
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, prisoner.getUuid().toString());
             stmt.setString(2, prisoner.getUsername());
-            stmt.setString(3, prisoner.getSentence());
-            stmt.setInt(4, prisoner.getContraband());
-            stmt.setLong(5, TimeUtil.getLongFromTime(prisoner.getFirstJoin()));
-            stmt.setLong(6, TimeUtil.getLongFromTime(prisoner.getLastJoin()));
+            stmt.setInt(3, prisoner.getContraband());
+            stmt.setLong(4, TimeUtil.getLongFromTime(prisoner.getFirstJoin()));
+            stmt.setLong(5, TimeUtil.getLongFromTime(prisoner.getLastJoin()));
+            stmt.setString(6, prisoner.getSentence());
             stmt.setString(7, prisoner.getCell().getUuid().toString());
 
             stmt.executeUpdate();
